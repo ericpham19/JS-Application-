@@ -5,11 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Project</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="/.index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <h1> Weather App</h1>
+  
+    <section class="top-banner">
+        <div class="container">
+          <h1 class="heading">Get The Weather</h1>
+          <form id = "get-weather-form">
+            <input type="text" id= "city" name ="city" placeholder="Search for a city" autofocus>
+            <button type="submit">SUBMIT</button>
+            <span class="msg"></span>
+          </form>
+        </div>
+      </section>
+
+        <div class="weather-container">
+          <div class="weather-info">
+              <div class="city">
+                <h1>Melbourne</h1>
+              </div>
+
+              <div class ="temperature">
+                <img src = "" alt = "">
+                <span id="temp" >10</span>
+                <span id="Celcius">C</span>
+              </div>
+              <div class="weather-description">
+                Sunny but could change
+              </div>
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+
+
+      <section class="ajax-section">
+        <div class="container">
+          <ul class="cities"></ul>
+        </div>
+      </section>
+
+
+
+
+
+
+      
+      <script src="index.js"></script>
 </body>
 </html>
