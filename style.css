@@ -1,3 +1,8 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+ }
 
 html {font-size: 100%;} /*16px*/
 
@@ -24,10 +29,46 @@ body {
     
     height: 100vh;
     background: linear-gradient(rgb(47,88,233), rgb(51,171,249));
-    background: white;
+  
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
+  position: relative;
+  background-position :center;
+  background-repeat: no-repeat;
+  background-size : cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
+.heading{
+    font-size : 2.8rem;
+    font-weight: 1000;
+}
+.container {
+    width: 100%;
+    text-align: center;
+    flex: auto;
+    height: 50vh;
+    
+}
+
+.weather-container{
+    margin-top: 40px;
+    padding-top : 10px;
+    padding-bottom: 10px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+}
+   
+
+.msg {
+    display: flex;
+    flex-direction: column;
+   
+}
