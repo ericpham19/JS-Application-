@@ -22,20 +22,20 @@
             placeholder="Search for a city"
             autofocus
           />
-          <button type="submit">SUBMIT</button>
+          <button type="submit">Search</button>
           <span class="msg">Will display error if needed</span>
         </form>
 
         <div class="weather-container">
           <div class="weather-info">
-            <div class="city">
+            <div class="city-result">
               <h1>Melbourne</h1>
             </div>
 
             <div class="temperature">
               <img src="" alt="" />
               <span id="temp">10</span>
-              <span id="Celcius">C</span>
+              <span id="Celcius">C°</span>
             </div>
             <div class="weather-description">Sunny but could change</div>
           </div>
@@ -45,7 +45,16 @@
 
     <section class="ajax-section">
       <div class="card-container">
-        <ul class="card-cities"></ul>
+        <ul class="card-cities">
+          <li class = 'mini-cities'>
+            <h3 class = "mini-cities-name"></h3>
+            <span class = "mini-cities-temp">...<sup>C°</sup></span>
+            <figure>
+              <img class="mini-cities-icons" src="" alt="">
+            </figure>
+          </li>
+
+        </ul>
       </div>
     </section>
 
