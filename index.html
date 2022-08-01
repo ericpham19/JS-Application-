@@ -19,25 +19,27 @@
             type="text"
             id="city"
             name="city"
-            placeholder="Search for a city"
+            placeholder="City name,country code optional"
             autofocus
           />
-          <button type="submit">Search</button>
+          <button onclick = "findWeather()" type="button">Search</button>
           <span class="msg">Will display error if needed</span>
         </form>
 
         <div class="weather-container">
           <div class="weather-info">
-            <div class="city-result">
-              <h1>Melbourne</h1>
+            <div >
+              <h1 id="city-result"></h1>
             </div>
 
             <div class="temperature">
-              <img src="" alt="" />
-              <span id="temp">10</span>
-              <span id="Celcius">C°</span>
+              <img src="" id= "icon" alt="" />
+              <span id="temp"></span>
+              <span id="celcius">C°</span>
             </div>
-            <div class="weather-description">Sunny but could change</div>
+            <div >
+              <p id="weather-description"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -60,9 +62,7 @@
 
 
 
-
-
-
     <script src="index.js"></script>
+    
   </body>
 </html>
