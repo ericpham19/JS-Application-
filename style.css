@@ -47,6 +47,7 @@ body {
 
 .heading{
     font-size : 2.8rem;
+    font-family : 'Libre Baskerville', serif;
     font-weight: 1000;
 }
 .container {
@@ -103,8 +104,11 @@ form button:hover {
 .temperature {
     
     justify-content: center;
-
 }
+#city-result{
+    font-family : 'Libre Baskerville', serif;
+}
+
  #temp {
     font-size: 60px;
 }

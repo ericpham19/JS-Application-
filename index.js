@@ -27,13 +27,15 @@ function findWeather(){
     
     })
     .catch (error => console.log("error")) 
+        alert ("Type in a valid city")
 }
 
 function getBackgroundImage(){
     let textField = document.getElementById("city");
-    backgroundImageUrl= `https://api.unsplash.com/search/photos/random/?client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`
-     console.log(textField.value)
-    let backgroundImage = document.body.style.backgroundImage ;
+    backgroundImageUrl= `https://api.unsplash.com/photos/random/?client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`;
+
+    console.log(textField.value)
+    let body= document.getElementsByTagName('body')[0];
     backgroundImage = backgroundImageUrl;
     let photographer= document.querySelector ("#photographer");
 
@@ -42,7 +44,10 @@ function getBackgroundImage(){
     
     .then ((jsonData) => {
         console.log(jsonData)
-        backgroundImage.src = jsonData.urls.regular;
+        let randomImageUrl= jsonData.urls.regular;
+
+        body.style.backgroundImage = `url(${randomImageUrl})`;
+        
         photographer.innerText = jsonData.user.name
     })
     .catch ( (error) =>
