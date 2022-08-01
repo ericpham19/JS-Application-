@@ -22,7 +22,7 @@
             placeholder="City name,country code optional"
             autofocus
           />
-          <button onclick = "findWeather()" type="button">Search</button>
+          <button onclick = "findWeather(); getBackgroundImage();" type="button">Search</button>
           <span class="msg">Will display error if needed</span>
         </form>
 
@@ -46,22 +46,16 @@
     </section>
 
     <section class="ajax-section">
-      <div class="card-container">
-        <ul class="card-cities">
-          <li class = 'mini-cities'>
-            <h3 class = "mini-cities-name"></h3>
-            <span class = "mini-cities-temp">...<sup>C°</sup></span>
-            <figure>
-              <img class="mini-cities-icons" src="" alt="">
-            </figure>
-          </li>
-
+      <div class="container">
+        <ul class="cities">
+          <li>Hi</li>
         </ul>
       </div>
     </section>
 
 
-
+    <p class = "image-info">Photo by <a id= "photographer" href="#">name</a></p>
+    
     <script src="index.js"></script>
     
   </body>
