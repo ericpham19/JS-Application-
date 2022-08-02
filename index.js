@@ -39,7 +39,7 @@ function findWeather(){
  
 function getBackgroundImage(){
     const textField = document.getElementById("city");
-    backgroundImageUrl= `https://api.unsplash.com/photos/random/?client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`;
+    backgroundImageUrl= `https://api.unsplash.com/search/photos/?query=${textField.value}&client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno;`;
     const photographer= document.querySelector ("#photographer");
     console.log(textField.value)
     const body= document.getElementsByTagName('body')[0];
@@ -50,9 +50,9 @@ function getBackgroundImage(){
     
     .then ((jsonData) => {
         console.log(jsonData)
-        const randomImageUrl= jsonData.urls.regular;
+       
 
-        body.style.backgroundImage = `url(${randomImageUrl})`;
+        body.style.backgroundImage = `url(${backgroundImageUrl})`;
         
         photographer.innerText = "Photo By " + jsonData.user.name
         
