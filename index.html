@@ -14,49 +14,57 @@
     <section class="top-banner">
       <div class="container">
         <h1 class="heading"><b>Get The Weather</b></h1>
-        <form id="get-weather-form">
-          <input
-            type="text"
-            id="city"
-            name="city"
-            placeholder="City name,country code optional"
-            autofocus
-          />
-          <button onclick = "findWeather(); getBackgroundImage();" type="button">Search</button>
-          <span class="msg">Will display error if needed</span>
-        </form>
-
-        <div class="weather-container">
-          <div class="weather-info">
-            <div >
-              <h1 id="city-result"></h1>
-            </div>
-
-            <div class="temperature">
-              <img src="" id= "icon" alt="" />
-              <span id="temp"></span>
-              <span id="celcius">C°</span>
-            </div>
-            <div >
-              <p id="weather-description"></p>
+        <div class="border-box">
+          <form id="get-weather-form">
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder="City name,country code optional"
+              autofocus
+            />
+            <button onclick = "findWeather(); getBackgroundImage();" type="button">Search</button>
+            <span class="msg"></span>
+          </form>
+  
+          <div class="weather-container">
+            <div class="weather-info">
+              <div >
+                <h1 id="city-result"></h1>
+              </div>
+  
+              <div class="temperature">
+                <img src="" id= "icon" alt="" />
+                <span id="temp"></span>
+                <span id="celcius"></span>
+              </div>
+              <div >
+                <p id="weather-description"></p>
+              </div>
             </div>
           </div>
         </div>
+        
       </div>
     </section>
 
     <section class="ajax-section">
       <div class="container">
         <ul class="cities">
-          <li>Hi</li>
+          <li></li>
         </ul>
       </div>
     </section>
 
+    <div class="photo-container">
+      <p class = "image-info">
+      </p>
+      <a id= "photographer" href=""></a>
+  
+    </div>
+   
 
-    <p class = "image-info">Photo by <a id= "photographer" href="#"></a>
-    </p>
-    
+
     <script src="index.js"></script>
     
   </body>

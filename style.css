@@ -1,197 +1,209 @@
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing : border-box;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html {font-size: 100%;} /*16px*/
+html {
+  font-size: 100%;
+} /*16px*/
 
-h1, h2, h3, h4, h5 {
-    margin: 3rem 0 1.38rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    line-height: 1.3;
-  }
-  
-  h1 {
-    margin-top: 0;
-    font-size: 3.052rem;
-  }
-  
-  h2 {font-size: 2.441rem;}
-  
-  h3 {font-size: 1.953rem;}
-  
-  h4 {font-size: 1.563rem;}
-  
-  h5 {font-size: 1.25rem;}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
 body {
-    
-    height: 100vh;
-    background: linear-gradient(rgb(47,88,233), rgb(51,171,249));
-  
-  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  background: linear-gradient(rgb(254,248,221), rgb(51, 171, 249));
+
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
   position: relative;
-  background-position :center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size : cover;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
-.heading{
-    font-size : 2.8rem;
-    font-family : 'Libre Baskerville', serif;
-    font-weight: 1000;
+.heading {
+  font-size: 2.8rem;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 1000;
+  color: #FF4500;
 }
 .container {
-    width: 100%;
-    text-align: center;
-    flex: auto;
-  
-    
+  width: 100%;
+  text-align: center;
+  flex: auto;
 }
+.border-box {
+  border-color: grey;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  box-shadow: 50px;
+  padding: 0 30px 20px;
+}
+.weather-container {
+  margin-top: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: whitesmoke;
+  border-style: solid;
+  border-radius: 10px;
 
-.weather-container{
-    margin-top: 40px;
-    padding-top : 10px;
-    padding-bottom: 10px;
-    border-color: whitesmoke;
-    border-style: solid;
-    border-radius: 8px;
-    box-shadow: 0 0 15px black;
-    background-color: white;
+  background-color: white;
 }
-   
 
 .msg {
-    display: flex;
-    flex-direction: column;
-    display: none;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-#city{
-box-shadow: 0 0 15px black;
-
+#city {
+  border-radius: 10px;
 }
-input{
-    border: solid whitesmoke;
-    border-radius: 8px;
-    padding: 15px;
-    max-width: 50ch;
 
+input {
+  border: solid whitesmoke;
+  border-radius: 8px;
+  padding: 15px;
+  max-width: 50ch;
 }
 
 form button {
-    font-size: 15px;
-    border:solid white;
-    border-radius: 5px;
-    margin-left: 3px;
-    cursor: pointer;
-    transition: background-color 0.4s ease-in;
+  font-size: 15px;
+  border: solid white;
+  border-radius: 10px;
+  margin-left: 3px;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in;
 }
 
 form button:hover {
-    background-color : greenyellow;
+  background-color: rgb(51, 171, 249);
 }
 
 .temperature {
-    
-    justify-content: center;
+  justify-content: center;
 }
-#city-result{
-    font-family : 'Libre Baskerville', serif;
+#city-result {
+  font-family: "Libre Baskerville", serif;
 }
 
- #temp {
-    font-size: 60px;
+#temp {
+  font-size: 60px;
 }
 #celcius {
-    font-size: 30px;
+  font-size: 30px;
 }
 
-#weather-description{
-    font-size: 20px;
-    font-family:'Lato', sans-serif;
+#weather-description {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
 }
 .weather-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#icon{
-    width: 50%;
+#icon {
+  width: 50%;
 }
 input {
-    width: 67%
+  width: 67%;
 }
-
 
 .ajax-section {
-   
-    height: 35vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 50px 0 20px;
+  height: 35vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 50px 0 20px;
 }
-.image-info{
-    font-family: 'Lato', sans-serif ;
-    font-size: 1.2rem;
-    
+.image-info {
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+  color: yellow;
+  
+}
+.photo-container {
+    display: flex;
+    align-items: center;
+}
+.cities{
+    list-style: none;
 }
 
 #photographer {
-    text-decoration: none;
+  text-decoration: underline;
+  color:red;
+  font-weight: 500;
+  font-size:30px;
+  margin-left: 5px;
 }
 
 
-
-
-
-   
-  
-
-
-
-
-
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: black;
-    font-size: 10pt; 
- }
- ::-moz-placeholder { /* Firefox 19+ */
-    color: black;
-    font-size: 8px; 
- }
- :-ms-input-placeholder { /* IE 10+ */
-    color: black;
-    font-size: 12pt; 
- }
- :-moz-placeholder { /* Firefox 18- */
-    color: black;
-    font-size: 12pt;
- }
-
-
-
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: black;
+  font-size: 10pt;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+  font-size: 8px;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: black;
+  font-size: 12pt;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: black;
+  font-size: 12pt;
+}
 
 /* media styling*/
 
-
-@media (min-width: 300px) and (max-width : 700px){
-    form button{
-        margin: 12px 0 0 0;
-        width: 60%;
-        background-color:yellowgreen;
-    }
+@media (min-width: 300px) and (max-width: 700px) {
+  form button {
+    margin: 12px 0 0 0;
+    width: 60%;
+    background-color: yellowgreen;
+  }
 }
 
-@media (max-width : )
