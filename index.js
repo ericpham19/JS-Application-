@@ -4,10 +4,9 @@ const weatherIcon = document.getElementById("icon");
 const weatherInfo = document.getElementById("weather-description");
 const cityName = document.getElementById("city-result");
 const textField = document.getElementById("city");
-
-
+let weatherQuery;
 const url = `https://api.openweathermap.org/data/2.5/forecast?q=${textField.value}&units=metric&appid=33d7061a211b97265abda12a2d87a56e`;
- backgroundImageUrl = `https://api.unsplash.com/photos/random/?client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`;
+backgroundImageUrl = `https://api.unsplash.com/photos/random/?client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`;
 
 textField.addEventListener("keydown", function (event) {
   if (event.keyCode == 13 && textField.value !== "") {
@@ -33,8 +32,10 @@ function findWeather() {
 }
 function displayData(data) {
   temperature.innerText = data.list[0].main.temp + "C°";
+  weatherQuery = weatherInfo.innerText;
   weatherInfo.innerText = data.list[0].weather[0].description;
-  console.log(data.list[0].weather[0].description);
+  console.log(weatherInfo.innerText);
+  
   
   cityName.innerText = data.city.name;
   iconCode = data.list[0].weather[0].icon;
@@ -46,8 +47,9 @@ function getBackgroundImage() {
   const textField = document.getElementById("city");
   const body = document.getElementsByTagName("body")[0];
   const photographer = document.querySelector("#photographer");
-  backgroundImageUrl = `https://api.unsplash.com/photos/random/?query=${textField.value}${weatherInfo}&client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno;`;
-  console.log(weatherInfo);
+  backgroundImageUrl = `https://api.unsplash.com/photos/random/?query=${textField.value}&auto=format&client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno;`;
+
+   
   return fetch(backgroundImageUrl)
     .then((response) => response.json())
 
@@ -65,19 +67,9 @@ function getBackgroundImage() {
     .catch((error) => alert(error.message));
 }
 
-
-
-
-
-
-
-
-
-
 function useCurrentLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
@@ -92,10 +84,8 @@ function useCurrentLocation() {
           weatherInfo.innerText = result.weather[0].description;
           cityName.innerText = result.name;
           iconCode = result.weather[0].icon;
-          iconUrl ="https://api.openweathermap.org/img/w/" + iconCode;
+          iconUrl = "https://api.openweathermap.org/img/w/" + iconCode;
           weatherIcon.src = iconUrl;
-
-
         });
     });
   }
