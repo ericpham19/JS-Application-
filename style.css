@@ -116,6 +116,14 @@ form button:hover {
   background-color: rgb(51, 171, 249);
 }
 
+  form button {
+    
+    width: 60%;
+    background-color: yellowgreen;
+  }
+
+
+
 .temperature {
   justify-content: center;
 }
@@ -198,12 +206,4 @@ input {
 }
 
 /* media styling*/
-
-@media (min-width: 300px) and (max-width: 700px) {
-  form button {
-    margin: 12px 0 0 0;
-    width: 60%;
-    background-color: yellowgreen;
-  }
-}
 
