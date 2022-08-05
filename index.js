@@ -1,4 +1,4 @@
-import { GeocoderAutocomplete } from '@geoapify/geocoder-autocomplete';
+
 const submitButton = document.getElementById("submitBtn");
 const temperature = document.getElementById("temp");
 const weatherIcon = document.getElementById("icon");
@@ -98,64 +98,4 @@ function useCurrentLocation() {
   }
 } 
 
-const autocomplete = new GeocoderAutocomplete(
-  document.getElementById("city"), 
-  '73ec61b56a6942a99a45cad9a675b476', 
-  { city });
-
-autocomplete.on('select', (location) => {
-// check selected location here 
-});
-
-autocomplete.on('suggestions', (suggestions) => {
-// process suggestions here
-});
-
-
-
-
-
- /*function autoComplete (input){
-  let search_terms = [];
-  const requestOptions = {
-    method: 'GET',
-  };
-  const url= `https://api.geoapify.com/v1/geocode/autocomplete?text=${input}&apiKey=1d4725a7b4e74d678beddb4c924c5fc6`
-  fetch(url, requestOptions)
-  .then( response => {
-     response.json()
-     console.log(response.json)
-  })
-  .then(data =>{
   
-  let locationData = data[results]
-  console.log(locationData);
-  for (let i= 0; i < locationData.length; i++){
-    let locationName= locationData[i].properties.city + locationData[i].properties.country 
-    search_terms.push(locationName)
-  
-  }
-})
-  if (input == ""){
-    return [];
-  }
-  let reg = new RegExp(input)
-  return search_terms.filter(function(term) {
-    if (term.match(reg)) {
-      return term;
-    }
-  });
-}
-
-function showResults(val) {
-  res = document.getElementById("results");
-  res.innerHTML = '';
-  let list = '';
-  let terms = autoComplete(val);
-  console.log(terms)
-  for (i=0; i<terms.length; i++) {
-    list += '<li>' + terms[i] + '</li>';
-  }W
-  res.innerHTML = '<ul>' + list + '</ul>';
-}*/
-

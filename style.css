@@ -221,9 +221,3 @@ input {
   font-size: 12pt;
 }
 
-/* media styling*/
-@media screen and (max-width: 500px) {  
-  .ajax-section .cities {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
