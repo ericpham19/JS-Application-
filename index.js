@@ -1,11 +1,9 @@
-
 const submitButton = document.getElementById("submitBtn");
 const temperature = document.getElementById("temp");
 const weatherIcon = document.getElementById("icon");
 const weatherInfo = document.getElementById("weather-description");
 const cityName = document.getElementById("city-result");
 const textField = document.getElementById("city");
-
 
 const url = `https://api.openweathermap.org/data/2.5/forecast?q=${textField.value}&units=metric&appid=33d7061a211b97265abda12a2d87a56e`;
 backgroundImageUrl = `https://api.unsplash.com/photos/random/?query=${textField.value}&auto=format&client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`;
@@ -18,13 +16,11 @@ textField.addEventListener("keydown", function (event) {
   }
 });
 
-
-
 function findWeather() {
   const textField = document.getElementById("city");
-  document.querySelector ("#searchBtn").addEventListener('click', function () {
+  document.querySelector("#searchBtn").addEventListener("click", function () {
     document.querySelector("#city").innerHTML = "";
-  })
+  });
   const msgValue = document.querySelector(".msg");
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${textField.value}&units=metric&appid=33d7061a211b97265abda12a2d87a56e`;
 
@@ -33,17 +29,14 @@ function findWeather() {
     .then((data) => {
       msgValue.innerText = "";
       displayData(data);
-      console.log(data);
+      
     })
     .catch((error) => (msgValue.innerText = "Please type in a valid city"));
 }
 function displayData(data) {
-  temperature.innerText = data.list[0].main.temp + "C°";
+  temperature.innerText = data.list[0].main.temp + "°C";
   weatherQuery = weatherInfo.innerText;
   weatherInfo.innerText = data.list[0].weather[0].description;
-  console.log(weatherInfo.innerText);
-  
-  
   cityName.innerText = data.city.name;
   iconCode = data.list[0].weather[0].icon;
   iconUrl = "https://api.openweathermap.org/img/w/" + iconCode;
@@ -56,7 +49,6 @@ function getBackgroundImage() {
   const photographer = document.querySelector("#photographer");
   backgroundImageUrl = `https://api.unsplash.com/photos/random/?query=${textField.value}&auto=format&client_id=hGciUY5Pj0GifSYTR7VGVdm43bnnWBgWU0HkalOJyno`;
 
-   
   return fetch(backgroundImageUrl)
     .then((response) => response.json())
 
@@ -87,7 +79,7 @@ function useCurrentLocation() {
         .then((result) => {
           msgValue.innerText = "";
           console.log(result);
-          temperature.innerText = result.main.temp + "C°";
+          temperature.innerText = result.main.temp + "°C";
           weatherInfo.innerText = result.weather[0].description;
           cityName.innerText = result.name;
           iconCode = result.weather[0].icon;
@@ -96,6 +88,4 @@ function useCurrentLocation() {
         });
     });
   }
-} 
-
-  
+}
